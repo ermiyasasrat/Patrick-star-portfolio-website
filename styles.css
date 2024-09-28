@@ -1,0 +1,265 @@
+body{
+    font-family: "poppins", sans-serif;
+}
+.container{
+    max-width:90%;
+    margin:0 auto;
+    padding: 0 8px;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 32px 0;
+}
+.navbar .right{
+    width:300px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.navbar .left{
+    font-size: 28px;
+    font-weight: bold;
+}
+.navbar  .right img{
+    width:24px;
+    height: 24px;
+}
+.navbar .right a{
+    color:black;
+    text-decoration: none;
+}
+.navbar .right a:hover{
+    text-decoration: underline;
+}
+footer p{
+    padding:32px;
+    text-align: center;
+}
+.hamburger{
+    width:50px;
+    height: 50px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display:none;
+}
+.hamburger:hover{
+    cursor: pointer;
+}
+.hamburger .bar{
+    height:5px;
+    background-color: black;
+    margin:3px;
+    width:40px;
+    border-radius: 10px;
+}
+.animateBar2{
+    animation-name:fadebar2;
+    animation-duration: 0.5s;
+    animation-fill-mode:forwards;
+}
+.animateBar1{
+    animation-name:fadebar1;
+    animation-duration: 0.5s;
+    animation-fill-mode:forwards;
+}
+.animateBar3{
+    animation-name:fadebar3;
+    animation-duration: 0.5s;
+    animation-fill-mode:forwards;
+}
+.mobileNav{
+    width: 100px;
+    background-color: white;
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 2;
+    top:0;
+    right:-160px;
+}
+.mobileNav a{
+    margin:16px;
+    text-decoration: none;
+    color: black;
+}
+.mobileNav img{
+    width: 24px;
+    height: 24px;
+}
+.animateSlider{
+    animation-name: slidingMenu;
+    animation-duration:0.5s;
+    animation-fill-mode:forwards;
+}
+@keyframes slidingMenu{
+    from{}
+    to{
+        transform: translateX(-160px);
+    }
+}
+.project-grid{
+    display:grid;
+    grid-template-areas:
+    "eth eth alphabet"
+    "eth eth traveler"
+    "astrol cube traveler"
+    "cup instal instal"
+    "cup instal instal"
+    "foam foam dimensional"
+    "foam foam dimensional"; 
+   gap:16px; 
+   width:100%;
+}
+ #eth{
+    grid-area: eth;
+}
+#alphabet{
+    grid-area: alphabet;
+}
+#cube{
+    grid-area: cube;
+}
+#astrol {
+    grid-area: astrol;
+}
+#traveler{
+    grid-area: traveler;
+}
+#cup{
+    grid-area: cup;
+}
+#instal{
+    grid-area: instal;
+}
+#foam{
+    grid-area: foam;
+}
+#dimensional{
+    grid-area: dimensional;
+}
+.project{
+   position:relative;
+}
+.project img{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+.project .overlay{
+    position: absolute;
+    top:0;
+    left: 0;
+    display: flex;
+    width:100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    font-weight: bold;
+    font-size: 36px;
+    letter-spacing: 2px;
+    transition:all 0.2s ease;
+}
+.overlay:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+.overlay.white{
+    color: white;
+}
+@media screen and (max-width:1000px){
+    .container{
+        max-width:100%;
+    }
+    .project-grid{
+        display:grid;
+        grid-template-areas:
+        "eth eth "
+        "alphabet traveler "
+        "cube astrol"
+        "instal instal"
+        "cup foam"
+        "dimensional dimensional"; 
+       gap:8px; 
+       max-width:100%;
+    }
+}
+@media screen and (max-width:768px){
+    .hamburger{
+        display: flex;
+    }
+    .navbar .right{
+        display: none;
+    }
+    .navbar{
+        padding: 16px 24px;
+        box-sizing: border-box;
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        z-index: 3;
+        background-color: white;
+    }
+    .project-grid{
+        margin-top: 80px;
+        display:grid;
+        grid-template-areas:
+        "eth eth "
+        "alphabet alphabet "
+        "cube astrol"
+        "traveler traveler"
+        "instal instal"
+        "cup cup"
+        "foam foam"
+        "dimensional dimensional"; 
+       grid-column-gap:0px; 
+    }
+
+    .project .mobile{
+        font-size: 16px;
+    }
+    footer p{
+        font-size:16px;
+        text-align: center;
+    }
+}
+
+@keyframes fadebar2{
+    from{
+        transform: scaleX(1);
+        opacity:1;
+    }
+    to{
+        transform: scaleX(0);
+        opacity:0;
+    }
+}
+@keyframes fadebar1{
+    from{
+         transform: rotate(0);
+    }
+    to{
+        transform: rotate(45deg) translate(6px ,10px);
+        
+        
+    }
+}
+@keyframes fadebar3{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(-45deg) translate(6px , -10px);
+        
+    }
+}
+
